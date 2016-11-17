@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device name="Android">
+  <item name="none">0</item>
+  <item name="screen.on">112.3</item>  <!-- ~200mA -->
+  <item name="screen.full">300</item>  <!-- ~300mA -->
+  <item name="bluetooth.active">104</item> <!-- Bluetooth data transfer, ~10mA -->
+  <item name="bluetooth.on">4</item>  <!-- Bluetooth on & connectable, but not connected, ~0.1mA -->
+  <item name="wifi.on">5</item>  <!-- ~3mA -->
+  <item name="wifi.active">78</item>  <!-- WIFI data transfer, ~200mA -->
+  <item name="wifi.scan">62</item>  <!-- WIFI network scanning, ~100mA -->
+  <item name="dsp.audio">100</item> <!-- ~10mA -->
+  <item name="dsp.video">100</item> <!-- ~50mA -->
+  <item name="camera.flashlight">0.1</item> <!-- Avg. power for camera flash, ~160mA -->
+  <item name="camera.avg">0.1</item> <!-- Avg. power use of camera in standard usecases, ~550mA -->
+  <item name="radio.active">300</item> <!-- ~200mA -->
+  <item name="radio.scanning">10</item> <!-- cellular radio scanning for signal, ~10mA -->
+  <item name="gps.on">30</item> <!-- ~50mA -->
+  <!-- Current consumed by the radio at different signal strengths, when paging -->
+  <array name="radio.on"> <!-- Strength 0 to BINS-1 -->
+      <value>4</value> <!-- ~2mA -->
+      <value>4</value> <!-- ~1mA -->
+  </array>
+  <!-- Different CPU speeds as reported in
+       /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state -->
+    <array name="cpu.speeds">
+        <value>403000</value>
+        <value>806000</value>
+        <value>1183000</value>
+        <value>1326000</value>
+        <value>1469000</value>
+        <value>1482000</value>
+        <value>1625000</value>
+        <value>1664000</value>
+        <value>1781000</value>
+        <value>1885000</value>
+        <value>1950000</value>
+        <value>2158000</value>
+  </array>
+  <!-- Current when CPU is idle -->
+  <item name="cpu.idle">3.9</item>
+  <item name="cpu.awake">38.3</item>
+  <!-- Current at each CPU speed, as per 'cpu.speeds' -->
+	<array name="cpu.active">
+	<value>89.2</value>
+	<value>112.2</value>
+	<value>121.6</value>
+	<value>138.7</value>
+	<value>158.4</value>
+	<value>162.2</value>
+	<value>191.6</value>
+	<value>196.2</value>
+	<value>217.2</value>
+	<value>222.5</value>
+	<value>240.1</value>
+	<value>250.4</value>
+  </array>
+  <!-- This is the battery capacity in mAh (measured at nominal voltage) -->
+  <item name="battery.capacity">4050</item>
+
+  <array name="wifi.batchedscan"> <!-- mA -->
+      <value>.2</value> <!-- 1-8/hr -->
+      <value>2</value>  <!-- 9-64/hr -->
+      <value>20</value>   <!-- 65-512/hr -->
+      <value>200</value>    <!-- 513-4,096/hr -->
+      <value>500</value>    <!-- 4097-/hr -->
+  </array>
+</device>
