@@ -2,7 +2,7 @@
 
 
 ### Credits:
-  - nofearnohappy & Co for RN2 device tree
+  - nofearnohappy & Co for RN2 device tree & 3.10.72 kernel
   - lbule for RN2 dev
-  - Smosia
+  - Smosia for the kernel
   - The CyanogenMod Team
