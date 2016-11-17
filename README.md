@@ -2,7 +2,7 @@
 
 
 ### Credits:
-  - nofearnohappy & Co
-  - lbule
+  - nofearnohappy & Co for RN2 device tree
+  - lbule for RN2 dev
   - Smosia
   - The CyanogenMod Team
