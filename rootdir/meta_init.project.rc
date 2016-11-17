@@ -1,0 +1,33 @@
+#INTERNAL_START
+on post-fs-data
+#
+# Connectivity related modules and character device nodes (Begin)
+#
+
+#/dev/ttyMT2 for Connectivity BT/FM/GPS usage
+    chmod 0660 /dev/ttyMT2
+    chown system system /dev/ttyMT2
+
+#
+# Connectivity related device nodes & configuration (end)
+#
+
+
+on boot
+
+#
+# Connectivity related services (Begin)
+#
+service wmt_loader /system/bin/wmt_loader
+	user root
+	group root
+	oneshot
+
+service 66xx_launcher /system/bin/6620_launcher -m 4 -p /system/etc/firmware/
+    user system
+    group system
+
+#
+# Connectivity related services (End)
+#
+#INTERNAL_END
