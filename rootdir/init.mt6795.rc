@@ -69,7 +69,7 @@ on init
 # mount different fs start
 
 on charger
-    mount ext4 /dev/block/platform/mtk-msdc.0/by-name/system /system ro wait
+    mount ext4 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/system /system ro wait
 
     start fuelgauged
     start kpoc_charger
@@ -89,24 +89,7 @@ on charger
 on fs
     write /proc/bootprof "INIT:Mount_START"
     mount_all /fstab.mt6795
-    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/mtk-msdc.0/by-name/userdata
-
-# change partition permissions
-    exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/proinfo
-    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/proinfo
-    exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/nvram
-    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/nvram
-    exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/para
-    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/para
-    exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/boot
-    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/boot
-    exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/recovery
-    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/recovery
-    exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/secro
-    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/secro
-    exec /system/bin/chmod 0660 /dev/block/platform/mtk-msdc.0/by-name/seccfg
-    exec /system/bin/chown root:system /dev/block/platform/mtk-msdc.0/by-name/seccfg
-
+    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/userdata
     write /proc/bootprof "INIT:Mount_END"
 
 # mount different fs end
