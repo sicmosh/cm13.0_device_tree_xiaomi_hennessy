@@ -22,7 +22,6 @@
      This storage will be the primary external storage and should have mountPoint="/mnt/sdcard".
      Each storage should have both a mountPoint and storageDescription attribute.
      The following attributes are optional:
-
         primary:    (boolean) this storage is the primary external storage
         removable:  (boolean) this is removable storage (for example, a real SD card)
         emulated:   (boolean) the storage is emulated via the FUSE sdcard daemon
@@ -30,24 +29,17 @@
                      (used for emulated storage that is shared with system's data partition)
         allowMassStorage: (boolean) true if this volume can be shared via USB mass storage
         maxFileSize: (integer) maximum file size in megabytes
-
       A storage should not have both emulated and removable set to true
 -->
 
 <StorageList xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- internal emulated storage -->
-    <storage android:mountPoint="/storage/sdcard0"
+        <storage android:mountPoint="/storage/sdcard0"
             android:storageDescription="@string/storage_internal"
             android:primary="true"
             android:emulated="true"
             android:removable="false"
             android:mtpReserve="100" />
-        <storage android:mountPoint="/storage/sdcard1"
-            android:storageDescription="@string/storage_sd_card"
-            android:primary="false"
-            android:emulated="false"
-            android:removable="true"
-            android:allowMassStorage="true" />
         <storage android:mountPoint="/storage/usbotg"
             android:storageDescription="@string/storage_usb"
             android:primary="false"

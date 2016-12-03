@@ -207,6 +207,17 @@
       sha_version="0"
   />
 
+  <!-- Test 3 -->
+  <supl_profile name="Test 3"
+      addr="127.0.0.1"
+      port="7276"
+      tls="false"
+      mcc="998"
+      supl_version="1"
+      tls_version="2"
+      sha_version="1"
+  />
+
   <!-- cdma_profile
 
     name:
