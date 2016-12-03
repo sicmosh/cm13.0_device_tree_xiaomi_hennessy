@@ -3,8 +3,7 @@
 
 ### Credits:
   - nofearnohappy & LazyC0DEr for RN2 device tree & 3.10.72 kernel development
-  - lbule for RN2 dev
-  - Smosia for the kernel
+  - Smosia for the 3.10.72 kernel for RN3
   - The CyanogenMod Team
 
 ### CM13.0 vendor for Xiaomi Redmi Note 3 (HENNESSY):
