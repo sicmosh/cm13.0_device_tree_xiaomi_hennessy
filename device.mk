@@ -32,11 +32,11 @@ TARGET_OTA_ASSERT_DEVICE := hennessy
 
 #App YGPS
 PRODUCT_PACKAGES += \
-    YGPS \
+    YGPS 
 
 # Power
 PRODUCT_PACKAGES += \
-    power.mt6795 \
+    power.mt6795 
 
 # Camera
 #PRODUCT_PACKAGES += \
@@ -44,7 +44,7 @@ PRODUCT_PACKAGES += \
 
 # Use CM Gello browser
 PRODUCT_PACKAGES += \
-    Gello \
+    Gello 
 
 # Audio
 PRODUCT_PACKAGES += \

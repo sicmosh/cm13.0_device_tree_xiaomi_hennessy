@@ -22,7 +22,7 @@
     <bool name="config_animateScreenLights">true</bool>
 
     <!-- Remote server that can provide NTP responses. -->
-    <string translatable="false" name="config_ntpServer">europe.pool.ntp.org</string>
+    <string translatable="false" name="config_ntpServer">asia.pool.ntp.org</string>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->

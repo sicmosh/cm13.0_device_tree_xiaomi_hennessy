@@ -3,7 +3,7 @@
 # system.prop for Hennessy
 #
 
-rild.libpath=/system/lib/mtk-ril.so
+rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
 
 wifi.interface=wlan0
@@ -30,7 +30,7 @@ ro.sys.usb.mtp.whql.enable=0
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
 
-ro.sys.usb.storage.type=mtp
+ro.sys.usb.storage.type=mtp,mass_storage
 
 # USB BICR function
 ro.sys.usb.bicr=yes
@@ -63,7 +63,6 @@ ro.kernel.zio=38,108,105,16
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
 
-#qinhai change density
 ro.sf.lcd_density=480
 
 # performance
@@ -93,8 +92,15 @@ ril.external.md=0
 ro.mtk_cam_lomo_support=1
 ro.btstack=blueangel
 ro.sf.hwrotation=0
-curlockscreen=0
+ril.current.share_modem=2
+curlockscreen=1
 ro.mediatek.gemini_support=true
+persist.radio.fd.counter=15
+persist.radio.fd.off.counter=5
+persist.radio.fd.r8.counter=15
+persist.radio.fd.off.r8.counter=5
+persist.mtk.wcn.combo.chipid=-1
+persist.mtk.combo.coredump=no
 drm.service.enabled=true
 fmradio.driver.enable=1
 ril.first.md=1
@@ -103,8 +109,9 @@ ril.telephony.mode=0
 dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt
 mediatek.wlan.chip=MT6630
 mediatek.wlan.module.postfix=_mt6630
+ril.read.imsi=1
 ril.radiooff.poweroffMD=0
-ro.frp.pst=/dev/block/platform/mtk-msdc.0/by-name/frp
+ro.frp.pst=/dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/frp
 ro.mediatek.version.branch=alps-mp-m0.mp11
 ro.mediatek.version.sdk=4
 bt.profiles.dun.enabled=1
@@ -114,6 +121,7 @@ ril.current.share_modem=2
 ro.mtk_audenh_support=1
 ro.mtk_lossless_bt_audio=1
 ro.mtk_bessurround_support=1
+ro.mtk_gemini_enhancement=1
 ro.mtk_wapi_support=1
 ro.mtk_bt_support=1
 ro.mtk_wappush_support=1
@@ -177,6 +185,7 @@ ro.mtk_safemedia_support=1
 ro.mtk_umts_tdd128_mode=1
 ro.mtk_cam_mav_support=1
 ro.mtk_cam_vfb=1
+ro.mtk_rild_read_imsi=1
 ro.sim_refresh_reset_by_modem=1
 ro.mtk_external_sim_support=1
 ro.mtk_motion_track_support=1

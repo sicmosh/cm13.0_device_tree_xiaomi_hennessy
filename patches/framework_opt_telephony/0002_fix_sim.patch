@@ -1,0 +1,53 @@
+From 7b22026e8b2c8b3e7654f1e82ddcee0996956d67 Mon Sep 17 00:00:00 2001
+From: nofearnohappy <fetpoh@mail.ru>
+Date: Sun, 23 Oct 2016 01:12:47 +0300
+Subject: [PATCH] fix sim
+
+---
+ src/java/com/android/internal/telephony/uicc/IccFileHandler.java | 2 +-
+ src/java/com/android/internal/telephony/uicc/UiccTlvData.java    | 9 +++------
+ 2 files changed, 4 insertions(+), 7 deletions(-)
+
+diff --git a/src/java/com/android/internal/telephony/uicc/IccFileHandler.java b/src/java/com/android/internal/telephony/uicc/IccFileHandler.java
+index 22d0dfe..9eed8ce 100644
+--- a/src/java/com/android/internal/telephony/uicc/IccFileHandler.java
++++ b/src/java/com/android/internal/telephony/uicc/IccFileHandler.java
+@@ -359,7 +359,7 @@ public void loadEFTransparent(int fileid, Message onLoaded) {
+                         fileid, 0, onLoaded);
+ 
+         mCi.iccIOForApp(COMMAND_GET_RESPONSE, fileid, getEFPath(fileid),
+-                        0, 0, 0, null, null, mAid, response);
++                        0, 0, GET_RESPONSE_EF_SIZE_BYTES, null, null, mAid, response);
+     }
+ 
+     /**
+diff --git a/src/java/com/android/internal/telephony/uicc/UiccTlvData.java b/src/java/com/android/internal/telephony/uicc/UiccTlvData.java
+index 17f594c..5f35e41 100644
+--- a/src/java/com/android/internal/telephony/uicc/UiccTlvData.java
++++ b/src/java/com/android/internal/telephony/uicc/UiccTlvData.java
+@@ -1,12 +1,9 @@
+ package com.android.internal.telephony.uicc;
+ 
+-import android.telephony.Rlog;
+-
+ /**
+  * UICC TLV Data Parser according to ETSI TS 102 221 spec.
+  */
+ public class UiccTlvData {
+-    private static final String LOG_TAG = "UiccTlvData";
+ 
+     private static final int TLV_FORMAT_ID = 0x62;
+ 
+@@ -85,9 +82,9 @@ public static UiccTlvData parse(byte[] data) throws IccFileTypeMismatch{
+                         break;
+ 
+                     default:
+-                        Rlog.d(LOG_TAG, "Unknown tag 0x" + String.format("%02X", currentTag));
+-                        currentLocation = parsedData.parseSomeTag(data, currentLocation);
+-                        break;
++                        //Unknown TAG
++                        throw new IccFileTypeMismatch();
++
+                 }
+             }
+ 

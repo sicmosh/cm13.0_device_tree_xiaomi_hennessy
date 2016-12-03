@@ -18,6 +18,8 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_NO_FACTORYIMAGE := true
 
+TARGET_BOARD_PLATFORM ?= mt6795
+
 # CPU
 ifeq ($(FORCE_32_BIT),true)
 TARGET_ARCH := arm
@@ -30,7 +32,7 @@ else
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
+TARGET_CPU_ABI2 := 
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_SMP := true
 
@@ -59,6 +61,31 @@ MTK_HARDWARE := true
 BOARD_USES_LEGACY_MTK_AV_BLOB := true
 COMMON_GLOBAL_CFLAGS += -DMTK_HARDWARE -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE
+# RIL
+# moved to forked frameworks_opt_telephony repo
+#BOARD_RIL_CLASS := ../../../$(DEVICE_FOLDER)/ril/
+MTK_DT_SUPPORT := no
+MTK_VT3G324M_SUPPORT := no
+MTK_SHARE_MODEM_CURRENT := 1
+MTK_SHARE_MODEM_SUPPORT := 2
+MTK_IPV6_SUPPORT := yes
+MTK_LTE_SUPPORT := yes
+MTK_LTE_DC_SUPPORT := no
+MTK_SVLTE_SUPPORT := no
+MTK_EAP_SIM_AKA := yes
+MTK_IRAT_SUPPORT := no
+MTK_DTAG_DUAL_APN_SUPPORT := no
+MTK_MD1_SUPPORT := 5
+MTK_MD2_SUPPORT := 4
+MTK_MD3_SUPPORT := 2
+MTK_MD5_SUPPORT := 5
+MTK_ENABLE_MD1 = yes
+MTK_ENABLE_MD2 = no
+MTK_ENABLE_MD3 = no
+MTK_ENABLE_MD5 = no
+
+BOARD_CONNECTIVITY_VENDOR := MediaTek
+BOARD_USES_MTK_AUDIO := true
 TARGET_KMODULES := true
 
 # Flags
@@ -73,7 +100,15 @@ TARGET_IS_64_BIT := true
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --base 0x40078000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000 --board Bule
+BOARD_MKBOOTIMG_ARGS := \
+	--base 0x40078000 \
+	--pagesize 2048 \
+	--kernel_offset 0x00008000 \
+	--ramdisk_offset 0x03f88000 \
+	--second_offset 0x00e88000 \
+	--tags_offset 0x0df88000 \
+	--board Bule
+
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 
 # build old-style zip files (required for ota updater)
@@ -106,6 +141,11 @@ EXTENDED_FONT_FOOTPRINT := true
 BOARD_USES_MTK_AUDIO := true
 BOARD_CONNECTIVITY_VENDOR := MediaTek
 BOARD_CONNECTIVITY_MODULE := conn_soc
+
+# Display
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
@@ -145,6 +185,16 @@ MTK_FM_CHIP := MT6630_FM
 # Consumerir
 MTK_IRTX_SUPPORT :=true
 
+# MTK_WLAN_SUPPORT
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mt66xx
+WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
+WIFI_DRIVER_FW_PATH_STA := STA
+WIFI_DRIVER_FW_PATH_AP := AP
+WIFI_DRIVER_FW_PATH_P2P := P2P
 # make_ext4fs requires numbers in dec format
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_PROTECT_FIMAGE_PARTITION_SIZE:=10485760
@@ -164,12 +214,9 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storag
 # system.prop
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
-# PREBUILT_Chromium
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
-
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-    device/xiaomi/hennessy/sepolicy
+       device/xiaomi/hennessy/sepolicy
 
 # Hack for building without kernel sources
 ifeq ($(TARGET_DEVICE),hennessy)

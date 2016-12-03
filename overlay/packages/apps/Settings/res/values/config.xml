@@ -1,8 +1,19 @@
-<resources>
+<resources xmlns:xliff="urnasis:names:tc:xliff:document:1.2 ">
   <bool name="has_led_flash">true</bool>
   <bool name="config_show_volumeRockerWake">true</bool>
 
  <!-- Using this on MSIM devices leads to weird states that break telephony's
  internal state machine. All MSIM devices should probably set this to "true"-->
  <bool name="config_disablePreferredNetworkSwitch" translatable="false">true</bool>
+
+ <!-- Show Expanded Desktop preference -->
+ <bool name="config_show_expandedDesktop">true</bool>
+
+ <!-- Whether the device support custom performance profiles. Leave empty when
+ the device do not support it. -->
+ <string name="config_perf_profile_prop" translatable="false">sys.perf.profile</string>
+
+ <!-- When config_perf_profile_prop = true, then this value MUST be one of the
+ values listed in cm_arrays for perf_profile_values -->
+ <string name="config_perf_profile_default_entry" translatable="false">1</string>
 </resources>

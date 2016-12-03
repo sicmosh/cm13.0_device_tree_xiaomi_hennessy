@@ -1,5 +1,4 @@
 This is patch directory
 
 cd WORKING_DIR
-sh device/xiaomi/hennessy/patches/install.sh
-sh device/xiaomi/hennessy/patches/uninstall.sh
+sh device/xiaomi/hennessy/patches/apply.sh
