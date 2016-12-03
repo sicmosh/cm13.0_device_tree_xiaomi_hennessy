@@ -48,13 +48,6 @@ ro.zygote.preload.enable=0
 # temporary enables NAV bar (soft keys)
 qemu.hw.mainkeys=1
 
-# button jack mode & switch for cx861
-persist.sys.button_jack_profile=volume
-persist.sys.button_jack_switch=0
-
-#default timezone
-persist.sys.defaulttimezone=Europe/Moscow
-
 ro.kernel.zio=38,108,105,16
 #ro.kernel.qemu=1
 #ro.boot.selinux=disable
@@ -63,7 +56,12 @@ ro.kernel.zio=38,108,105,16
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
 
+#qinhai change density
 ro.sf.lcd_density=480
+
+# button jack mode & switch
+persist.sys.button_jack_profile=volume
+persist.sys.button_jack_switch=0
 
 # performance
 ro.mtk_perf_simple_start_win=1
@@ -202,6 +200,17 @@ ro.mtk_volte_support=1
 persist.dbg.volte_avail_ovr=1
 ro.mtk_voice_extension_support=1
 wfd.dummy.enable=1
+persist.sys.display.clearMotion=1
+persist.clearMotion.fblevel.nrm=255
+persist.clearMotion.fblevel.bdr=255
+ro.mtk_clearmotion_support=1
+ro.mtk_slow_motion_support=1
+ro.mtk_16x_slowmotion_support=1
+persist.power.useautobrightadj=true
+keyguard.no_require_sim=true
+persist.sys.isUsbOtgEnabled=true
+camera.disable_zsl_mode=1
+persist.debug.wfd.enable=1
 ro.mediatek.project.path=device/vanzo/vz6795_lwt_m
 persist.mtk.wcn.combo.chipid=-1
 service.wcn.driver.ready=no
