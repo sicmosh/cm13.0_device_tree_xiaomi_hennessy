@@ -138,7 +138,6 @@ etc/mtk_omx_core.cfg
 etc/mtklog-config.prop
 etc/dhcpcd/dhcpcd-hooks/20-dns.conf
 etc/dhcpcd/dhcpcd-hooks/95-configured
-etc/dhcpcd/dhcpcd.conf
 etc/dhcpcd/dhcpcd-run-hooks
 etc/firmware/A4_15_2.2_AA.fw
 etc/firmware/A4_15_2.2_AA.raw
