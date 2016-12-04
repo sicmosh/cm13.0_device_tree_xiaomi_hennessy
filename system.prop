@@ -63,6 +63,11 @@ ro.sf.lcd_density=480
 persist.sys.button_jack_profile=volume
 persist.sys.button_jack_switch=0
 
+# add by qin for runin
+ro.build.device.ninur=64687
+
+persist.tone_relative_volume=100
+
 # performance
 ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_response_time=1
@@ -82,6 +87,7 @@ ro.mediatek.platform=MT6795
 ro.telephony.sim.count=2
 persist.radio.default.sim=0
 persist.radio.multisim.config=dsds
+persist.md.perm.checked=to_upgrade
 persist.gemini.sim_num=2
 ro.gemini.smart_sim_switch=false
 ril.specific.sm_cause=0
@@ -142,7 +148,7 @@ ro.mtk_fm_short_antenna_support=1
 ro.have_aacencode_feature=1
 ro.mtk_oma_drm_support=1
 ro.mtk_cta_drm_support=1
-ro.mtk_widevine_drm_l3_support=1
+ro.mtk_widevine_drm_support=1
 ro.mtk_eap_sim_aka=1
 ro.mtk_fm_recording_support=1
 ro.mtk_audio_ape_support=1
