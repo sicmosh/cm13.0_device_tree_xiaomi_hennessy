@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
 #    Snap \
 
 # Use CM Gello browser
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += 
     Gello 
 
 # Audio
@@ -207,7 +207,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
      dalvik.vm.image-dex2oat-Xms=64m \
      dalvik.vm.image-dex2oat-Xmx=512m \
      ro.dalvik.vm.native.bridge=0 \
-     persist.sys.usb.config=mtp \
+     persist.sys.usb.config=mtp,mass_storage \
      ro.mount.fs=EXT4 \
      camera.disable_zsl_mode=1 \
      persist.sys.timezone=Europe/Moscow
