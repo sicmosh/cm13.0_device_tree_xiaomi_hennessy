@@ -48,6 +48,13 @@ ro.zygote.preload.enable=0
 # temporary enables NAV bar (soft keys)
 qemu.hw.mainkeys=1
 
+# button jack mode & switch for cx861
+persist.sys.button_jack_profile=volume
+persist.sys.button_jack_switch=0
+
+#default timezone
+persist.sys.defaulttimezone=Europe/Moscow
+
 ro.kernel.zio=38,108,105,16
 #ro.kernel.qemu=1
 #ro.boot.selinux=disable
@@ -56,17 +63,7 @@ ro.kernel.zio=38,108,105,16
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
 
-#qinhai change density
 ro.sf.lcd_density=480
-
-# button jack mode & switch
-persist.sys.button_jack_profile=volume
-persist.sys.button_jack_switch=0
-
-# add by qin for runin
-ro.build.device.ninur=64687
-
-persist.tone_relative_volume=100
 
 # performance
 ro.mtk_perf_simple_start_win=1
@@ -87,7 +84,6 @@ ro.mediatek.platform=MT6795
 ro.telephony.sim.count=2
 persist.radio.default.sim=0
 persist.radio.multisim.config=dsds
-persist.md.perm.checked=to_upgrade
 persist.gemini.sim_num=2
 ro.gemini.smart_sim_switch=false
 ril.specific.sm_cause=0
@@ -97,7 +93,7 @@ ro.mtk_cam_lomo_support=1
 ro.btstack=blueangel
 ro.sf.hwrotation=0
 ril.current.share_modem=2
-curlockscreen=1
+curlockscreen=0
 ro.mediatek.gemini_support=true
 persist.radio.fd.counter=15
 persist.radio.fd.off.counter=5
@@ -148,7 +144,7 @@ ro.mtk_fm_short_antenna_support=1
 ro.have_aacencode_feature=1
 ro.mtk_oma_drm_support=1
 ro.mtk_cta_drm_support=1
-ro.mtk_widevine_drm_support=1
+ro.mtk_widevine_drm_l3_support=1
 ro.mtk_eap_sim_aka=1
 ro.mtk_fm_recording_support=1
 ro.mtk_audio_ape_support=1
