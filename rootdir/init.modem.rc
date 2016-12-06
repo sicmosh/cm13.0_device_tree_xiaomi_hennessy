@@ -14,7 +14,7 @@ on post-fs-data
     chown radio radio /sys/kernel/ccci/boot
 
 #SeLinux
-    mkdir /data/ccci_cfg 0700 system radio
+    mkdir /data/ccci_cfg 0770 system radio
     restorecon /data/ccci_cfg
     restorecon_recursive /protect_f
     restorecon_recursive /protect_s
@@ -68,7 +68,7 @@ service ril-daemon-mtk /system/bin/mtkrild
     disabled
     oneshot
 
-service ril-daemon-md2 /system/bin/mtkrildmd2
+service ril-daemon-mtkmd2 /system/bin/mtkrildmd2
     class core
     socket rild-md2 stream 660 root radio
     socket rild2-md2 stream 660 root radio

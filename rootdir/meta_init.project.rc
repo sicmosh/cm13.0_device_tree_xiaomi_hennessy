@@ -87,3 +87,4 @@ service 66xx_launcher /system/bin/6620_launcher -m 4 -p /system/etc/firmware/
 #
 # Connectivity related services (End)
 #
+#INTERNAL_END

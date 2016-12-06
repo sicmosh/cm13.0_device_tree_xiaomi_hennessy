@@ -1,3 +1,4 @@
+####25.09############
 bin/applysig
 bin/dm_agent_binder
 bin/downloader
@@ -20,6 +21,7 @@ bin/volte_imcb
 bin/volte_stack
 bin/volte_ua
 bin/vtservice
+####25.09############
 bin/6620_launcher
 bin/6620_wmt_concurrency
 bin/6620_wmt_lpbk
@@ -75,7 +77,6 @@ bin/magd
 bin/make_ext4fs
 bin/matv
 bin/mc6420d
-bin/mcDriverDaemon
 bin/mcd
 bin/md_ctrl
 bin/mdlogger
@@ -131,11 +132,8 @@ etc/bluetooth/auto_pair_devlist.conf
 etc/bluetooth/bt_did.conf
 etc/bluetooth/bt_stack.conf
 etc/bluetooth/btconfig.xml
-etc/584dfad04fab11e585c2f8b156b9efc4.tlbin
 etc/clatd.conf
 etc/custom.conf
-etc/mtk_omx_core.cfg
-etc/mtklog-config.prop
 etc/dhcpcd/dhcpcd-hooks/20-dns.conf
 etc/dhcpcd/dhcpcd-hooks/95-configured
 etc/dhcpcd/dhcpcd-run-hooks
@@ -177,10 +175,12 @@ etc/firmware/mt6630_patch_e1_hdr.bin
 etc/firmware/mt6630_patch_e2_hdr.bin
 etc/firmware/mt6630_patch_e3_0_hdr.bin
 etc/firmware/mt6630_patch_e3_1_hdr.bin
-etc/mddb/BPLGUInfoCustomAppSrcP_MT6795_S00_MOLY_LR9_W1423_MD_LWTG_MP_V24_P55_1_ltg_n
-etc/mddb/BPLGUInfoCustomAppSrcP_MT6795_S00_MOLY_LR9_W1423_MD_LWTG_MP_V24_P55_1_lwg_n
-etc/mddb/DbgInfo_LR9.W1423.MD.LWTG.MP_LCSH6795_LWT_L_MOLY_LR9_W1423_MD_LWTG_MP_V24_P55_2016_10_18_12_07_1_ltg_n
-etc/mddb/DbgInfo_LR9.W1423.MD.LWTG.MP_LCSH6795_LWT_L_MOLY_LR9_W1423_MD_LWTG_MP_V24_P55_2016_10_18_12_09_1_lwg_n
+etc/mddb/BPLGUInfoCustomAppSrcP_MT6795_S00_MOLY_LR9_W1423_MD_LWTG_MP_V24_P37_1_ltg_n
+etc/mddb/BPLGUInfoCustomAppSrcP_MT6795_S00_MOLY_LR9_W1423_MD_LWTG_MP_V24_P37_1_lwg_n
+etc/mddb/DbgInfo_LR9.W1423.MD.LWTG.MP_LCSH6795_LWT_L_MOLY_LR9_W1423_MD_LWTG_MP_V24_P37_2015_10_15_21_51_1_ltg_n
+etc/mddb/DbgInfo_LR9.W1423.MD.LWTG.MP_LCSH6795_LWT_L_MOLY_LR9_W1423_MD_LWTG_MP_V24_P37_2015_10_15_21_53_1_lwg_n
+etc/mtk_omx_core.cfg
+etc/mtklog-config.prop
 etc/radvd/radvd.conf
 etc/wifi/p2p_supplicant_overlay.conf
 etc/wifi/wpa_supplicant.conf
@@ -197,6 +197,7 @@ lib/hw/memtrack.mt6795.so
 lib/hw/mmsdk.mt6795.so
 lib/hw/sensors.mt6795.so
 lib/hw/consumerir.mt6795.so
+####25.09############
 lib/hw/camera.default.so
 lib/libamrvt.so
 lib/libamr_wrap.so
@@ -254,6 +255,7 @@ lib/libvt_custom.so
 lib/libvtmal.so
 lib/libvt_socketbind.so
 lib/volte_imsm.so
+####25.09############
 lib/lib3a.so
 lib/lib3a_sample.so
 lib/libAGifEncoder.so
@@ -314,10 +316,12 @@ lib/libbtsession.so
 lib/libbtsniff.so
 lib/libbtstd.so
 lib/libbwc.so
+####ADD_CAMERA_START############
 lib/libcam.exif.v3.so
 lib/libcam.metadataprovider.so
 lib/libcam.utils.cpuctrl.so
 lib/libcam3_utils.so
+####ADD_CAMERA_END############
 lib/libcam.camadapter.so
 lib/libcam.camnode.so
 lib/libcam.camshot.so
@@ -487,8 +491,8 @@ lib64/hw/memtrack.mt6795.so
 lib64/hw/mmsdk.mt6795.so
 lib64/hw/sensors.mt6795.so
 lib64/hw/consumerir.mt6795.so
+####25.09############
 lib64/hw/camera.default.so
-lib64/hw/bluetooth.default.so
 lib64/drm/libdrmctaplugin.so
 lib64/drm/libdrmmtkplugin.so
 lib64/libantradio.so
@@ -538,6 +542,7 @@ lib64/libvt_socketbind.so
 lib64/mtk-ril.so
 lib64/mtk-rilmd2.so
 lib64/volte_imsm.so
+####25.09############
 lib64/lib3a.so
 lib64/lib3a_sample.so
 lib64/libCameraEffectJNI.so
@@ -575,10 +580,12 @@ lib64/libbtcusttable.so
 lib64/libbtem.so
 lib64/libbtstd.so
 lib64/libbwc.so
+####ADD_CAMERA_START############
 lib64/libcam.exif.v3.so
 lib64/libcam.metadataprovider.so
 lib64/libcam.utils.cpuctrl.so
 lib64/libcam3_utils.so
+####ADD_CAMERA_END############
 lib64/libcam.camadapter.so
 lib64/libcam.camnode.so
 lib64/libcam.camshot.so

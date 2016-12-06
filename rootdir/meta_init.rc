@@ -278,8 +278,17 @@ on post-fs-data
 
     # RTC
     mkdir /data/misc/rtc 0770 system system
-    
+
+    # M4U
+    #insmod /system/lib/modules/m4u.ko
+    #mknod /dev/M4U_device c 188 0
+    chmod 0444 /dev/M4U_device
+    	
+    # Sensor
+    chmod 0666 /dev/sensor
+
     # Android SEC related device nodes
+    insmod /system/lib/modules/sec.ko
     chmod 0660 /dev/sec
     chown root system /dev/sec
 

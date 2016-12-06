@@ -289,6 +289,10 @@ on post-fs-data
 #   chown ccci ccci /sys/class/BOOT/BOOT/boot/md
     chown radio radio /sys/kernel/ccci/boot
 
+    # M4U
+    #insmod /system/lib/modules/m4u.ko
+    #mknod /dev/M4U_device c 188 0
+    chmod 0444 /dev/M4U_device
     
     # Sensor
     chmod 0666 /dev/hwmsensor
@@ -311,6 +315,8 @@ on post-fs-data
     #NFC
     rm /data/mtknfc_server
 
+    # for irda
+    chmod 0660 /dev/remote_ctrl_dev
 ## Custom pos_fs area (END) 
 #INTERNAL_END
 

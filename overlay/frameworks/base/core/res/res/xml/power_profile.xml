@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
-  <!-- Most values are the incremental current used by a feature,
-       in mA (measured at nominal voltage).
-       The default values are deliberately incorrect dummy values.
-       OEM's must measure and provide actual values before
-       shipping a device.
-       Example real-world values are given in comments, but they
-       are totally dependent on the platform and can vary
-       significantly, so should be measured on the shipping platform
-       with a power meter. -->
     <item name="none">0</item>
     <item name="screen.on">112.3</item>
     <item name="screen.full">300</item>
@@ -19,19 +10,14 @@
     <item name="wifi.scan">62</item>
     <item name="dsp.audio">100</item>
     <item name="dsp.video">100</item>
-  <item name="camera.flashlight">0.1</item> <!-- Avg. power for camera flash, ~160mA -->
-  <item name="camera.avg">0.1</item> <!-- Avg. power use of camera in standard usecases, ~550mA -->
     <item name="radio.active">300</item>
     <item name="radio.scanning">10</item>
     <item name="gps.on">30</item>
-  <!-- Current consumed by the radio at different signal strengths, when paging -->
-  <array name="radio.on"> <!-- Strength 0 to BINS-1 -->
+    <array name="radio.on">
         <value>4</value>
         <value>4</value>
-  </array>
-  <!-- Different CPU speeds as reported in
-       /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state -->
-  <array name="cpu.speeds">
+    </array>
+    <array name="cpu.speeds">
         <value>403000</value>
         <value>806000</value>
         <value>1183000</value>
@@ -44,11 +30,10 @@
         <value>1885000</value>
         <value>1950000</value>
         <value>2158000</value>
-  </array>
-  <!-- Current when CPU is idle -->
+    </array>
     <item name="cpu.idle">3.9</item>
     <item name="cpu.awake">38.3</item>
-  <array name="cpu.active">
+	<array name="cpu.active">
 	<value>89.2</value>
 	<value>112.2</value>
 	<value>121.6</value>
@@ -61,15 +46,13 @@
 	<value>222.5</value>
 	<value>240.1</value>
 	<value>250.4</value>
-  </array>
-  <!-- This is the battery capacity in mAh (measured at nominal voltage) -->
-  <item name="battery.capacity">4050</item>
-
-  <array name="wifi.batchedscan"> <!-- mA -->
-      <value>.2</value> <!-- 1-8/hr -->
-      <value>2</value>  <!-- 9-64/hr -->
-      <value>20</value>   <!-- 65-512/hr -->
-      <value>200</value>    <!-- 513-4,096/hr -->
-      <value>500</value>    <!-- 4097-/hr -->
-  </array>
+    </array>
+    <item name="battery.capacity">4050</item>
+    <array name="wifi.batchedscan">
+        <value>.2</value>
+        <value>2</value>
+        <value>20</value>
+        <value>200</value>
+        <value>500</value>
+    </array>
 </device>

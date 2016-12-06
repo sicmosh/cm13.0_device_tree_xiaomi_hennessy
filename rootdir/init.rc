@@ -522,7 +522,6 @@ on boot
     chown system system /sys/class/timed_output/vibrator/enable
     chown system system /sys/class/leds/keyboard-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
-    chown system system /sys/class/leds/torch-light/brightness
     chown system system /sys/class/leds/button-backlight/brightness
     chown system system /sys/class/leds/jogball-backlight/brightness
     chown system system /sys/class/leds/red/brightness
@@ -597,6 +596,13 @@ on property:vold.decrypt=trigger_shutdown_framework
 
 on property:sys.powerctl=*
     powerctl ${sys.powerctl}
+
+## performance mode switch
+on property:persist.sys.aries.power_profile=high
+start perfmode
+
+on property:persist.sys.aries.power_profile=middle
+start normalmode
 
 # system server cannot write to /proc/sys files,
 # and chown/chmod does not work for /proc/sys/ entries.

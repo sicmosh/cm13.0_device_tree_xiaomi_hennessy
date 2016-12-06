@@ -17,9 +17,6 @@ on fs
     export MC_AUTH_TOKEN_PATH /efs
     start mobicore
     write /proc/bootprof "start mobicore end (on fs)"
-    # add by GOODIX for finger print begin
-    chown system system /dev/goodix_fp_spi
-    # add by GOODIX for finger print end
 
 #start daemon (Registry directories should already be present
 service mobicore /system/bin/mcDriverDaemon -r /system/app/mcRegistry/030b0000000000000000000000000000.drbin -r /system/app/mcRegistry/020f0000000000000000000000000000.drbin -r /system/app/mcRegistry/05120000000000000000000000000000.drbin -r /system/app/mcRegistry/070b0000000000000000000000000000.drbin -r /system/app/mcRegistry/04020000000000000000000000000000.drbin
@@ -137,10 +134,9 @@ on post-fs-data
     chmod 0660 /dev/consumerir
     chown system system /dev/consumerir
 
-#lenovo-sw wuwl10 add 20160226 begin
-    chown system system /sys/lenovo_tp_gestures/tpd_suspend_status
-    chown system system /sys/lenovo_tp_gestures/tpd_glove_status
-#lenovo-sw wuwl10 add 20160226 end
+#add by dingyin for vol key wake system
+chmod 0660  /sys/bus/platform/drivers/mtk-kpd/kpd_as_wake
+chown system system /sys/bus/platform/drivers/mtk-kpd/kpd_as_wake
 
 #
 # Connectivity related device nodes & configuration (end)
