@@ -22,7 +22,7 @@
     <bool name="config_animateScreenLights">true</bool>
 
     <!-- Remote server that can provide NTP responses. -->
-    <string translatable="false" name="config_ntpServer">europe.pool.ntp.org</string>
+    <string translatable="false" name="config_ntpServer">asia.pool.ntp.org</string>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -44,7 +44,7 @@
     <!-- This string array should be overridden by the device to present a list of network
          attributes.  This is used by the connectivity manager to decide which networks can coexist
          based on the hardware -->
-    <!-- An Array of "[Connection name],[ConnectivityManager.TYPE_xxxx],
+    <!-- An Array of "[Connection name],[ConnectivityManager connection type],
          [associated radio-type],[priority],[restoral-timer(ms)],[dependencyMet]  -->
     <!-- the 5th element "resore-time" indicates the number of milliseconds to delay
          before automatically restore the default connection.  Set -1 if the connection
@@ -52,11 +52,13 @@
     <!-- the 6th element indicates boot-time dependency-met value. -->
     <string-array translatable="false" name="networkAttributes">
         <item>wifi,1,1,1,-1,true</item>
+        <item>"tedongle,49,49,1,-1,true"</item>
         <item>mobile,0,0,0,-1,true</item>
         <item>mobile_mms,2,0,2,300000,true</item>
         <item>mobile_supl,3,0,2,300000,true</item>
         <item>mobile_dun,4,0,3,300000,true</item>
         <item>mobile_hipri,5,0,3,300000,true</item>
+        <item>"bluetooth,7,7,0,-1,true"</item>
         <item>mobile_fota,10,0,2,300000,true</item>
         <item>mobile_ims,11,0,2,300000,true</item>
         <item>mobile_cbs,12,0,2,300000,true</item>
@@ -118,7 +120,7 @@
 
     <string-array translatable="false" name="config_tether_bluetooth_regexs">
         <item>"bt-pan"</item>
-        <item>"bt-dun"</item>
+        <item>"bt-dun"</item>   
     </string-array>
 
     <bool name="config_wifi_background_scan_support">true</bool>
@@ -150,44 +152,42 @@
     <bool name="config_automatic_brightness_available">true</bool>
 
     <integer-array name="config_autoBrightnessLevels">
-        <item>16</item>
-        <item>32</item>
-        <item>50</item>
-        <item>100</item>
-        <item>140</item>
-        <item>180</item>
-        <item>240</item>
-        <item>300</item>
-        <item>600</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>3000</item>
-        <item>4000</item>
-        <item>8000</item>
-        <item>10000</item>
+        <item>128</item>
+        <item>256</item>
+        <item>384</item>
+        <item>512</item>
+        <item>640</item>
+        <item>768</item>
+        <item>896</item>
+        <item>1024</item>
+        <item>2048</item>
+        <item>4096</item>
+        <item>6144</item>
+        <item>8192</item>
+        <item>10240</item>
+        <item>12288</item>
+        <item>14336</item>
+        <item>16384</item>
+        <item>18432</item>
     </integer-array>
-
-    <!-- Array of output values for LCD backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         The brightness values must be between 0 and 255 and be non-decreasing.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>30</item>
-        <item>40</item>
-        <item>50</item>
-        <item>60</item>
-        <item>70</item>
-        <item>80</item>
-        <item>102</item>
-        <item>102</item>
-        <item>102</item>
-        <item>102</item>
-        <item>102</item>
-        <item>180</item>
-        <item>200</item>
-        <item>210</item>
-        <item>230</item>
+	<integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>8</item>
+        <item>64</item>
+        <item>98</item>
+        <item>104</item>
+        <item>110</item>
+        <item>116</item>
+        <item>122</item>
+        <item>128</item>
+        <item>134</item>
+        <item>182</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
         <item>255</item>
     </integer-array>
     <integer-array name="config_autoBrightnessButtonBacklightValues">
@@ -404,9 +404,6 @@
 
     <!-- Enable doze powersaving -->
     <bool name="config_enableAutoPowerModes">true</bool>
-
-    <!-- True if the gesture service should be started at system start -->
-    <bool name="config_enableGestureService">true</bool>
 
     <!-- Older rotation sensors are not setting event.timestamp correctly. Setting to
      true will use SystemClock.elapsedRealtimeNanos() to set timestamp. -->
