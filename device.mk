@@ -43,8 +43,8 @@ PRODUCT_PACKAGES += \
 #    Snap \
 
 # Use CM Gello browser
-PRODUCT_PACKAGES += \
-    Gello 
+#PRODUCT_PACKAGES += \
+#   Gello \
 
 # Charger
 PRODUCT_PACKAGES += \
