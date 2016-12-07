@@ -36,7 +36,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.mt6795 
+    power.mt6795 \
 
 # Camera
 #PRODUCT_PACKAGES += \
@@ -44,7 +44,7 @@ PRODUCT_PACKAGES += \
 
 # Use CM Gello browser
 PRODUCT_PACKAGES += \
-    Gello
+    Gello 
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -86,6 +86,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril.config=fakeiccid  \
     persist.call_recording.enabled=true \
     persist.call_recording.src=1 
+
 # Audio
 PRODUCT_PACKAGES += \
     audio_policy.default \
