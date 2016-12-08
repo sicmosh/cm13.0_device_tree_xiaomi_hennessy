@@ -32,7 +32,7 @@ TARGET_OTA_ASSERT_DEVICE := hennessy
 
 #App YGPS
 PRODUCT_PACKAGES += \
-    YGPS 
+    YGPS \
 
 # Power
 PRODUCT_PACKAGES += \
@@ -41,51 +41,11 @@ PRODUCT_PACKAGES += \
 # Camera
 #PRODUCT_PACKAGES += \
 #    Snap \
+#    libnvramagentclient \
 
 # Use CM Gello browser
 #PRODUCT_PACKAGES += \
-#   Gello \
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger \
-    charger_res_images
-
-# FM Radio
-PRODUCT_PACKAGES += \
-    FmRadio
-
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
-# Other
-PRODUCT_PACKAGES += \
-    librs_jni \
-    libnl_2 \
-    com.android.future.usb.accessory
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.allow.mock.location=0 \
-    ro.debuggable=1 \
-    ro.zygote=zygote64_32 \
-    dalvik.vm.dex2oat-Xms=64m \
-    dalvik.vm.dex2oat-Xmx=64m \
-    dalvik.vm.image-dex2oat-Xms=64m \
-    dalvik.vm.image-dex2oat-Xmx=512m \
-    ro.dalvik.vm.native.bridge=0 \
-    persist.sys.usb.config=mtp \
-    ro.mount.fs=EXT4 \
-    camera.disable_zsl_mode=1 \
-    persist.sys.timezone=Europe/Moscow
-
-# PRODUCT_PROPERTY_OVERRIDES
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.kernel.android.checkjni=0 \
-    ro.telephony.ril_class=MediaTekRIL \
-    ro.telephony.ril.config=fakeiccid  \
-    persist.call_recording.enabled=true \
-    persist.call_recording.src=1 
+#    Gello \
 
 # Audio
 PRODUCT_PACKAGES += \
