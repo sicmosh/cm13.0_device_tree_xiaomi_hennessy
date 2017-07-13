@@ -116,9 +116,10 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/.thermal_policy_00:system/etc/.tp/.thermal_policy_00 \
      $(LOCAL_PATH)/configs/.thermal_policy_01:system/etc/.tp/.thermal_policy_01 
 
-# FM Radio
+# FMRadio
 PRODUCT_PACKAGES += \
-     	FmRadio
+    FmRadio \
+    libmtkplayer
 
 # ANT Permissions
 PRODUCT_COPY_FILES += \
